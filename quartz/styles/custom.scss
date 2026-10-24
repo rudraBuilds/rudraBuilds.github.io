@@ -1,9 +1,6 @@
 @use "./variables.scss" as *;
 @use "themes";
 
-// Devanagari font for the home page verse (must stay above all rules)
-@import url("https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Sanskrit&display=swap");
-
 // put your custom CSS here!
 
 // REMOVES DATE METADATA FROM HOMEPAGE
@@ -183,7 +180,7 @@ body[data-slug="index"] {
     padding: 3rem 0 2rem;
 
     .verse {
-      font-family: "Tiro Devanagari Sanskrit", "Noto Serif Devanagari", serif;
+      font-family: "Noto Serif Devanagari", "Kohinoor Devanagari", "Nirmala UI", "Mangal", serif;
       font-size: clamp(1.9rem, 5vw, 2.9rem);
       line-height: 1.35;
       margin: 0 0 0.75rem;
