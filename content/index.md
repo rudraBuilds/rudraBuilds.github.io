@@ -18,7 +18,7 @@ comments: "false"
 
 # Rudranil Bhattacharya
 
-<p class="lead">I build my understanding of technology, mathematics and physics one small step at a time, and use this space to document what I learn, build, simulate and struggle with.</p>
+<p class="lead">I'm learning technology, mathematics and physics in public. This site is my notebook: what I'm studying, what I'm building, and where I'm stuck.</p>
 
 ## Current interests
 
@@ -53,6 +53,10 @@ Building a foundation in C++, focused on solving problems with data structures a
 
 </div>
 
-## About these notes
+## About
 
-These are not polished notes or final ideas. They are growing thoughts that change over time, an attempt to understand the world through the lens of science. Many things here are incomplete or imperfect, and that is the point.
+I learn by building. When an idea from a course or a textbook finally clicks, I try to turn it into something I can run, like a simulation or a small program, so I can watch it behave instead of only trusting the equations.
+
+Right now that means drone dynamics and control, small physics simulations, and C++ with a focus on data structures and algorithms.
+
+Nothing here is finished. The notes are unpolished and some are wrong, and I leave them that way until my understanding improves, because the struggle is part of the point.
