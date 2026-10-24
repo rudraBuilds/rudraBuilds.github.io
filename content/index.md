@@ -12,7 +12,7 @@ comments: "false"
 
 <p class="gloss">Who truly knows, and who can here declare, when it was born and from where this creation came?</p>
 
-<p class="cite">Nasadiya Sukta, Rig Veda 10.129.6</p>
+<p class="cite">- Nasadiya Sukta, Rig Veda 10.129.6</p>
 
 </div>
 
