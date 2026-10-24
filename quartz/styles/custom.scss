@@ -210,7 +210,18 @@ body[data-slug="index"] {
     line-height: 1.15;
     letter-spacing: -0.01em;
     margin: 2.5rem 0 0.75rem;
-    border-bottom: none;
+    border: none;
+    box-shadow: none;
+  }
+
+  article h1::after,
+  article h1::before {
+    display: none;
+  }
+
+  article h1 .internal.alias,
+  article h1 a[role="anchor"] {
+    display: none;
   }
 
   .lead {
@@ -239,4 +250,10 @@ body[data-slug="index"] {
       margin: 0.25rem 0 0.5rem;
     }
   }
+}
+
+/* Site name in the sidebar */
+.page-title {
+  font-weight: 600;
+  font-size: 1.25rem;
 }
