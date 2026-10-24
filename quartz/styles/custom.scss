@@ -253,7 +253,11 @@ body[data-slug="index"] {
 }
 
 /* Site name in the sidebar */
-.page-title {
-  font-weight: 600;
-  font-size: 1.25rem;
+.left.sidebar .page-title,
+.left.sidebar .page-title a,
+h2.page-title,
+h2.page-title a {
+  font-weight: 700 !important;
+  font-size: 1.4rem !important;
+  line-height: 1.2 !important;
 }
