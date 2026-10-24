@@ -1,6 +1,9 @@
 @use "./variables.scss" as *;
 @use "themes";
 
+// Devanagari font for the home page verse (must stay above all rules)
+@import url("https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Sanskrit&display=swap");
+
 // put your custom CSS here!
 
 // REMOVES DATE METADATA FROM HOMEPAGE
@@ -44,11 +47,6 @@ body {
 
 /* Keep code blocks scrollable */
 
-figure[data-rehype-pretty-code-figure] {
-  overflow-x: auto;
-  max-width: 100%;
-}
-
 pre {
   overflow-x: auto;
   max-width: 100%;
@@ -67,6 +65,7 @@ iframe {
 
 figure[data-rehype-pretty-code-figure] {
   overflow-x: auto;
+  max-width: 100%;
   border-radius: 12px;
   padding-right: 0rem;
 
@@ -81,24 +80,18 @@ figure[data-rehype-pretty-code-figure] pre {
 }
 
 /* =========================
-   GRAPH VIEW IMPROVEMENTS
+   GRAPH VIEW
 ========================= */
 
-/* Main graph container */
-
 .graph-container {
-  background: var(--light);
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
   border-radius: 16px;
-  padding: 1rem;
+  padding: 0.5rem;
   height: 500px;
   overflow: hidden;
-
-  box-shadow:
-    0 0 10px rgba(0, 0, 0, 0.08),
-    0 0 25px rgba(0, 0, 0, 0.05);
 }
-
-/* Mobile graph sizing */
 
 @media screen and (max-width: 800px) {
   .graph-container {
@@ -107,16 +100,12 @@ figure[data-rehype-pretty-code-figure] pre {
   }
 }
 
-/* Graph title */
-
 .graph-title {
   font-size: 2rem !important;
   font-weight: 800;
   margin-bottom: 1rem;
   color: var(--dark);
 }
-
-/* Graph nodes */
 
 .graph .node {
   fill: var(--tertiary) !important;
@@ -128,13 +117,9 @@ figure[data-rehype-pretty-code-figure] pre {
   transition: 0.2s ease;
 }
 
-/* Hover effect */
-
 .graph .node:hover {
   transform: scale(1.15);
 }
-
-/* Connected nodes */
 
 .graph .node.connected {
   fill: var(--secondary) !important;
@@ -144,56 +129,23 @@ figure[data-rehype-pretty-code-figure] pre {
   );
 }
 
-/* Graph links */
-
 .graph .link {
   stroke: color-mix(in srgb, var(--secondary) 35%, transparent) !important;
   stroke-width: 1.5px;
 }
-
-/* Graph background */
-
-.graph {
-  background: var(--light);
-}
-
-/* Graph labels */
 
 .graph text {
   fill: var(--darkgray) !important;
   font-size: 0.85rem;
 }
 
-/* Remove borders */
-
-.graph-container,
-.graph {
-  border: none !important;
-}
-
-/* CLEAN GRAPH STYLE */
-
-.graph-container {
-  background: transparent !important;
-  border: none !important;
-  box-shadow: none !important;
-  padding: 0.5rem;
-}
-
-/* Actual graph canvas */
-
 .graph {
   background: rgba(255, 255, 255, 0.02) !important;
-
-  border: 1px solid var(--lightgray);
+  border: 1px solid var(--lightgray) !important;
   border-radius: 16px;
-
   min-height: 420px;
-
   backdrop-filter: blur(6px);
 }
-
-/* Mobile sizing */
 
 @media screen and (max-width: 800px) {
   .graph {
@@ -201,58 +153,92 @@ figure[data-rehype-pretty-code-figure] pre {
   }
 }
 
-/* cards in homepage */
-.card-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
-  margin-top: 2rem;
-}
-
-.home-card {
-  padding: 1rem 1.2rem;
-  border-radius: 12px;
-
-  background: transparent;
-
-  border: 1px solid color-mix(in srgb, var(--gray) 30%, transparent);
-
-  transition: 0.2s ease;
-}
-
-.home-card:hover {
-  transform: translateY(-2px);
-  border-color: var(--secondary);
-}
-
-.home-card h3 {
-  font-size: 1.25rem;
-  margin-bottom: 0.5rem;
-}
-
-/* quotes style */
-blockquote {
-  border-left: none !important;
-
-  padding-left: 0;
-
-  margin: 2rem auto 3rem auto;
-
-  max-width: 700px;
-
-  text-align: center;
-
-  font-style: italic;
-
-  opacity: 0.82;
-
-  line-height: 1.6;
-
-  font-size: 1.05rem;
-}
-
 .content-meta {
   display: none !important;
 }
 
-  
+/* =========================
+   HOME PAGE REDESIGN
+   (front page only)
+========================= */
+
+body[data-slug="index"] {
+  // No graph, backlinks, explorer or recent notes on the front page.
+  // The left toolbar (search, dark mode) stays.
+  .sidebar.right,
+  .explorer,
+  .graph-container,
+  .backlinks,
+  .recent-notes {
+    display: none;
+  }
+
+  .center {
+    max-width: 44rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .verse-block {
+    padding: 3rem 0 2rem;
+
+    .verse {
+      font-family: "Tiro Devanagari Sanskrit", "Noto Serif Devanagari", serif;
+      font-size: clamp(1.9rem, 5vw, 2.9rem);
+      line-height: 1.35;
+      margin: 0 0 0.75rem;
+      color: var(--dark);
+    }
+
+    .translit {
+      font-style: italic;
+      color: var(--darkgray);
+      margin: 0;
+    }
+
+    .gloss {
+      max-width: 34rem;
+      margin: 1.5rem 0 0;
+    }
+
+    .cite {
+      font-size: 0.9rem;
+      color: var(--gray);
+      margin: 0.5rem 0 0;
+    }
+  }
+
+  h1 {
+    font-size: clamp(2.2rem, 6vw, 3.2rem);
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    margin: 2.5rem 0 0.75rem;
+  }
+
+  .lead {
+    font-size: 1.3rem;
+    max-width: 36rem;
+  }
+
+  h2 {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--lightgray);
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--darkgray);
+  }
+
+  .interest {
+    margin: 0 0 2rem;
+
+    h4 {
+      margin: 0 0 0.25rem;
+      font-size: 1.35rem;
+    }
+
+    p {
+      margin: 0.25rem 0 0.5rem;
+    }
+  }
+}
