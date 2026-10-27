@@ -1,8 +1,9 @@
 I was reading about radio astronomy when I chanced upon this [forum.](https://news.ycombinator.com/item?id=29787240) which is about using a [software defined radio](https://winnforum.org/wp-content/uploads/WInnForum/documents/SoftwareDefinedRadio.pdf) to make a backyard radio telescope. 
 I was aware that there are hardware [available](https://www.amazon.in/HackRF-Software-Defined-operating-frequency/dp/B07GKJPHLQ/ref=sr_1_1_sspa?crid=1X5IX2KYAGBS2&dib=eyJ2IjoiMSJ9.Y1R99K8xKxta8hwyRlcpmDLUmpOmZsQMt46Y_AfEPL0XNLKNDoO7bayVQQW2SOWdx1upxgZrak1vRiu9BVdAqSdkVaNKgvSiRk8DN5_5-kBQK-0SbNTjUBrA4DwBEPeNc8FR_ls8XA4cyy4AEHl6jcW11-ABctFjm6zC4RQh5cWuOEDWu3FZZLtKbb11iLz_OyPkY7MjZzXPYuasgrmE_kE4YV6pQVYqnHZYSpISYvHGDqUwSWQsm5wgPxyrT3l5kSlzXRv4dHC7bLAyOoJSXRzp-JjfGmfj6dVyTtCd3kU.gX9mbCN60u-R30ar0buk78ck-v4hpRUQvAwJRqVzQ2o&dib_tag=se&keywords=sdr&qid=1793115486&sprefix=sd%2Caps%2C293&sr=8-1-spons&aref=p4xMp3FyEQ&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&psc=1) - expensive shit - that could turn your laptop into a radio station but turned out there are web based SDRs too that is basically bunch of receivers all over the globe that are connected over the internet. 
 I tinkered around this [platform](http://websdr.ewi.utwente.nl:8901/) to eavesdrop on random frequencies. Initially what I found was just noise, with some irregular beeps and signals but after a bit of googling I found out that there are certain frequencies that are allotted for regional/international conversations between radio amateurs or ham operators. 
-I tuned into 14200kHz found two Russian guys having a long talk about i-don't-know-what and tuned into 7100kHz and enjoyed a lovely Chinese rock ;)
+I tuned into 14200kHz found two Russian guys having a long talk about i-don't-know-what, I did try to translate but the noise was making it hard for Google Translate to work. 
 
 ![[russian_convo_sdr.mp4]]
 
+Also tuned into 7100kHz and enjoyed a lovely Chinese rock ;)
 ![[chinese_radio_sdr.mp4]]
