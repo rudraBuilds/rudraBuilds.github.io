@@ -80,30 +80,50 @@ figure[data-rehype-pretty-code-figure] pre {
 
 /* =========================
    GRAPH VIEW
+   Structure: .graph (whole box) > h3 title + .graph-outer (framed area)
+   > .graph-container (the drawing). The container must fill .graph-outer,
+   otherwise the graph centres itself outside the visible frame.
 ========================= */
 
+.graph {
+  background: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  min-height: 0 !important;
+  padding: 0;
+
+  h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0 0 0.5rem;
+    color: var(--dark);
+  }
+}
+
+.graph-outer {
+  height: 320px !important;
+  border: 1px solid var(--lightgray);
+  border-radius: 12px;
+  background: transparent;
+  overflow: hidden;
+}
+
 .graph-container {
+  height: 100% !important;
+  width: 100%;
+  padding: 0 !important;
   background: transparent !important;
   border: none !important;
   box-shadow: none !important;
-  border-radius: 16px;
-  padding: 0.5rem;
-  height: 500px;
+  border-radius: 0;
   overflow: hidden;
 }
 
 @media screen and (max-width: 800px) {
-  .graph-container {
-    height: 350px;
-    padding: 0.5rem;
+  .graph-outer {
+    height: 260px !important;
   }
-}
-
-.graph-title {
-  font-size: 2rem !important;
-  font-weight: 800;
-  margin-bottom: 1rem;
-  color: var(--dark);
 }
 
 .graph .node {
@@ -136,20 +156,6 @@ figure[data-rehype-pretty-code-figure] pre {
 .graph text {
   fill: var(--darkgray) !important;
   font-size: 0.85rem;
-}
-
-.graph {
-  background: rgba(255, 255, 255, 0.02) !important;
-  border: 1px solid var(--lightgray) !important;
-  border-radius: 16px;
-  min-height: 420px;
-  backdrop-filter: blur(6px);
-}
-
-@media screen and (max-width: 800px) {
-  .graph {
-    min-height: 300px;
-  }
 }
 
 .content-meta {
