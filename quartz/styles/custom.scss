@@ -37,9 +37,11 @@ body[data-slug="index"] .article-title {
 
 /* Prevent overall page sideways scroll */
 
-html,
+/* "clip" stops sideways scroll without turning body into a scroll container,
+   which is what was breaking the sticky left sidebar. Keep this on body only. */
 body {
   overflow-x: hidden;
+  overflow-x: clip;
 }
 
 /* Keep code blocks scrollable */
@@ -78,30 +80,50 @@ figure[data-rehype-pretty-code-figure] pre {
 
 /* =========================
    GRAPH VIEW
+   Structure: .graph (whole box) > h3 title + .graph-outer (framed area)
+   > .graph-container (the drawing). The container must fill .graph-outer,
+   otherwise the graph centres itself outside the visible frame.
 ========================= */
 
+.graph {
+  background: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  min-height: 0 !important;
+  padding: 0;
+
+  h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0 0 0.5rem;
+    color: var(--dark);
+  }
+}
+
+.graph-outer {
+  height: 320px !important;
+  border: 1px solid var(--lightgray);
+  border-radius: 12px;
+  background: transparent;
+  overflow: hidden;
+}
+
 .graph-container {
+  height: 100% !important;
+  width: 100%;
+  padding: 0 !important;
   background: transparent !important;
   border: none !important;
   box-shadow: none !important;
-  border-radius: 16px;
-  padding: 0.5rem;
-  height: 500px;
+  border-radius: 0;
   overflow: hidden;
 }
 
 @media screen and (max-width: 800px) {
-  .graph-container {
-    height: 350px;
-    padding: 0.5rem;
+  .graph-outer {
+    height: 260px !important;
   }
-}
-
-.graph-title {
-  font-size: 2rem !important;
-  font-weight: 800;
-  margin-bottom: 1rem;
-  color: var(--dark);
 }
 
 .graph .node {
@@ -136,22 +158,43 @@ figure[data-rehype-pretty-code-figure] pre {
   font-size: 0.85rem;
 }
 
-.graph {
-  background: rgba(255, 255, 255, 0.02) !important;
-  border: 1px solid var(--lightgray) !important;
-  border-radius: 16px;
-  min-height: 420px;
-  backdrop-filter: blur(6px);
-}
-
-@media screen and (max-width: 800px) {
-  .graph {
-    min-height: 300px;
-  }
-}
-
 .content-meta {
   display: none !important;
+}
+
+/* =========================
+   HEADINGS IN NOTES
+   (every page except the home page)
+========================= */
+
+body:not([data-slug="index"]) article {
+  h1:not(.article-title) {
+    font-size: 2.2rem !important;
+    line-height: 1.2 !important;
+    font-weight: 600 !important;
+    margin: 2.5rem 0 1rem;
+  }
+
+  h2 {
+    font-size: 1.75rem !important;
+    line-height: 1.25 !important;
+    font-weight: 600 !important;
+    margin: 2.25rem 0 0.75rem;
+  }
+
+  h3 {
+    font-size: 1.4rem !important;
+    line-height: 1.3 !important;
+    font-weight: 600 !important;
+    margin: 2rem 0 0.5rem;
+  }
+
+  h4 {
+    font-size: 1.15rem !important;
+    line-height: 1.4 !important;
+    font-weight: 600 !important;
+    margin: 1.5rem 0 0.5rem;
+  }
 }
 
 /* =========================

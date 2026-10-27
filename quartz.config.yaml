@@ -82,7 +82,7 @@ plugins:
     order: 50
     layout:
       position: right
-      priority: 30
+      priority: 5
   - source: github:quartz-community/crawl-links
     enabled: true
     options:
@@ -255,7 +255,7 @@ plugins:
       position: beforeBody
       priority: 15
       display: all
-  # If the new colors don't show up after building, set this to enabled: false
+  # Keep this disabled: when enabled it overrides the custom fonts, colors and heading styles
   - source:
       name: quartz-themes
       repo: github:saberzero1/quartz-themes
