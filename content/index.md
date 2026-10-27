@@ -53,6 +53,7 @@ Building a foundation in C++, focused on solving problems with data structures a
 
 </div>
 
+[[Cool things I stumbled upon!]]
 ## About
 
 I learn by building. When an idea from a course or a textbook finally clicks, I try to turn it into something I can run, like a simulation or a small program, so I can watch it behave instead of only trusting the equations.
