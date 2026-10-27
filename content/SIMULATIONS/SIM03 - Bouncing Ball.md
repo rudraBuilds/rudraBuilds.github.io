@@ -4,6 +4,7 @@ To make a ball in free-fall bounce upon hitting the ground.
 We use the equations of motion under the influence of gravity to model the motion.
 - $v = v_0 - g t$
 - $h = h_0 + v t$
+hello
 
 #### Simulation 
 1) We update the velocity at every small time interval $dt$, and use that to find the height displaced during that interval. 

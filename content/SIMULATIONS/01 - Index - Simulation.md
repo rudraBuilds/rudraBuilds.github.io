@@ -9,3 +9,4 @@ order: "-1"
 4) SIM04 - Projectile State Estimation (2D Kalman Filter)
 5) SIM05 - Dynamic Model of a Drone 
 6) SIM06 - EKF Simulation on a Non Linear Model
+7) SIM07 - Pendulum using RK4 integrator
